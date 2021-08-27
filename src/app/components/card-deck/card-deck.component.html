@@ -1,0 +1,24 @@
+<div [ngSwitch]="status">
+  <!--Status 3 is error-->
+  <div *ngSwitchCase="3">
+    <ygr-error></ygr-error>
+  </div>
+  <!--Status 2 is success-->
+  <div *ngSwitchCase="2" class="card-columns">
+    <div class="card" *ngFor="let card of newsList" [routerLink]="['/news', card.id]">
+      <img [src]="card.imgPath" class="card-img-top w-100" [alt]="card.imgPath">
+      <div class="card-body">
+        <h5 class="card-title">{{card.title}}</h5>
+        <p class="card-text font-weight-normal">
+          {{card.description}}
+        </p>
+      </div>
+    </div>
+  </div>
+  <!--Status 1 is loading-->
+  <div *ngSwitchCase="1">
+    <ygr-loading></ygr-loading>
+  </div>
+  <!--Status 0 is waiting-->
+  <div *ngSwitchDefault></div>
+</div>

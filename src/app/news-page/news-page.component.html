@@ -1,0 +1,12 @@
+<div class="container bg-w">
+    <div class="row">
+        <div class="col"><button class="btn btn-outline-dark">Back to List</button></div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img [src]="news?.imgPath" [alt]="getImageName()" class="w-100">
+        </div>
+    </div>
+    <h1>{{news?.title}}</h1>
+    <div [innerHTML]="news?.content"></div>
+</div>

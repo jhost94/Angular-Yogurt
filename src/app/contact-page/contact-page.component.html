@@ -1,0 +1,47 @@
+<div class="container bg-w">
+  <ygr-header></ygr-header>
+  <!--Status 3 is error-->
+  <div *ngIf="status == 3">
+    <ygr-error></ygr-error>
+  </div>
+  <!--Status 2 is success-->
+  <div *ngIf="status == 2">
+  </div>
+  <!--Status 1 is loading-->
+  <div *ngIf="status == 1">
+    <ygr-loading></ygr-loading>
+  </div>
+  <!--Status 0 is waiting-->
+  <div *ngIf="status == 0">
+    <form [formGroup]="contacts">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" name="email" id="email" formControlName="email"
+          [(ngModel)]="contact.email" contact.email="email.value" aria-describedby="emailHelp"
+          placeholder="example@example.com">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+          <div *ngIf="email.errors?.required">This field is required.</div>
+          <div *ngIf="email.errors?.email">Invalid email address.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" class="form-control" id="subject" name="subject" formControlName="subject"
+          [(ngModel)]="contact.subject" placeholder="Enter subject">
+        <div *ngIf="subject.touched && subject.errors" class="alert alert-danger">
+          <div *ngIf="subject.errors?.required">This field is required.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" rows="3" name="message" formControlName="message"
+          [(ngModel)]="contact.message" placeholder="Enter message"></textarea>
+        <div *ngIf="message.touched && message.errors" class="alert alert-danger">
+          <div *ngIf="message.errors?.required">This field is required.</div>
+        </div>
+      </div>
+      <button type="button" [disabled]="contacts.invalid" class="btn btn-dark" (click)="onClick()">Send</button>
+    </form>
+  </div>
+</div>

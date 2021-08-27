@@ -1,0 +1,25 @@
+<div class="container sticky-top mt-3 mb-5">
+    <div class="row"></div>
+    <div class="row d-flex justify-content-between">
+        <div class="col">
+            <a routerLink="/"><img class="w-25" src="assets/logo.svg" alt="LOGO"></a>
+        </div>
+        <div class="col d-flex justify-content-end mt-3">
+            <a routerLink="/"><button class="btn btn-outline-light mr-2">Home</button></a>
+            <a routerLink="/brand"><button class="btn btn-outline-light mr-2">Brand</button></a>
+            <a routerLink="/news"><button class="btn btn-outline-light mr-2">News</button></a>
+            <div ngbDropdown class="d-inline-block mr-2">
+                <button ngbDropdownToggle class="btn btn-outline-light" id="dropdownBasic1">Flavours</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem *ngFor="let f of flavours"><a
+                            [routerLink]="['/flavour', f.toLowerCase()]">{{f}}</a></button>
+                </div>
+            </div>
+            <a routerLink="/contact"><button class="btn btn-outline-light mr-2">Contacts</button></a>
+        </div>
+    </div>
+</div>
+<!--Status 3 is error-->
+<!--Status 2 is success-->
+<!--Status 1 is loading-->
+<!--Status 0 is waiting-->

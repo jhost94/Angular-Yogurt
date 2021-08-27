@@ -1,0 +1,24 @@
+<div [ngSwitch]="status">
+    <!--Status 3 is error-->
+    <div *ngSwitchCase="3">~
+        <ygr-error></ygr-error>
+    </div>
+    <!--Status 2 is success-->
+    <div *ngSwitchCase="2">
+        <div class="container bg-w">
+            <div class="row d-flex">
+                <div class="col col-12">
+                    <img [src]="yogurt?.imgPath" class="w-100" [alt]="getImageName()">
+                </div>
+                <h2>{{yogurt?.flavour | titlecase}}</h2>
+                <div [innerHTML]="yogurt?.content"></div>
+            </div>
+        </div>
+    </div>
+    <!--Status 1 is loading-->
+    <div *ngSwitchCase="1">
+        <ygr-loading></ygr-loading>
+    </div>
+    <!--Status 0 is waiting-->
+    <div *ngSwitchDefault></div>
+</div>

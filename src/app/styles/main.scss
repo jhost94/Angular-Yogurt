@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+$body-bg: rgb(0,228,152);
+//$body-color: white;
+//$body-font-family: 'Abril Fatface', cursive !important;
+
+body {
+    font-family: 'Abril Fatface', cursive !important;
+    background: rgb(0,228,152);
+    background: linear-gradient(270deg, rgba(0,228,152,1) 0%, rgba(0,197,177,1) 100%);
+}
+
+//NOT WORKING
+.font-weight-normal {
+    font-weight: 400 !important;
+}
+
+.fs-2 {
+    font-size: 2em;
+}
+
+.bg-w {
+    background-color: white !important;
+}
+
+.imgSlide {
+    width: 90%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.picsum-img-wrapper {
+    width: 100%;
+    height: 600px;
+}
+
+.color-white {
+    color: white;
+}
+
+.color-black {
+    color: black !important;
+}
+
+.text-alight-right{
+    text-align: right;
+}
+
+.clicable {
+    cursor: pointer;
+}
+
+.card-deck {
+    column-count: 3;
+}
+
+.card-columns {
+    column-count: 3;
+}

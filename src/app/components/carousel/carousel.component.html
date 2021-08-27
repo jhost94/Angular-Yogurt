@@ -1,0 +1,26 @@
+<div [ngSwitch]="status">
+  <!--Status 3 is error-->
+  <div *ngSwitchCase="3">~
+    <ygr-error></ygr-error>
+  </div>
+  <!--Status 2 is success-->
+  <div *ngSwitchCase="2">
+    <ngb-carousel *ngIf="images">
+      <ng-template ngbSlide *ngFor="let img of images">
+        <div class="picsum-img-wrapper">
+          <img [src]="img" class="w-100" [alt]="getImageName(img)">
+        </div>
+        <div class="carousel-caption">
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+  <!--Status 1 is loading-->
+  <div *ngSwitchCase="1">
+    <ygr-loading></ygr-loading>
+  </div>
+  <!--Status 0 is waiting-->
+  <div *ngSwitchDefault></div>
+</div>
